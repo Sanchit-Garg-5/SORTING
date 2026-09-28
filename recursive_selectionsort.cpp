@@ -46,6 +46,7 @@ template <class... Args> void _print(stack <Args...> v) {cerr << "[ "; while (!v
 template <class... Args> void _print(queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.front()); cerr << " "; v.pop();} cerr << "]";}
 template <class... Args> void _print(priority_queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
 
+//tc is o(n^2 in bc,wc,ac) and sc is o(1) inplace
 void selectionsort(vector<ll>&given, int i){
     if(i==given.size()-1){return;}
     int minidx=i;
