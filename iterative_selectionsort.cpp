@@ -45,7 +45,7 @@ template <class... Args> void _print(forward_list <Args...> v) {cerr << "[ "; fo
 template <class... Args> void _print(stack <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
 template <class... Args> void _print(queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.front()); cerr << " "; v.pop();} cerr << "]";}
 template <class... Args> void _print(priority_queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
-
+//tc is o(n^2 in bc,wc,ac) and sc is o(1) inplace
 int main(){
     vector<ll>given={9,13,46,24,24,52,20,20,9};
     ll n=given.size();
