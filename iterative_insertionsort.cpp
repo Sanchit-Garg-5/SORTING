@@ -47,7 +47,7 @@ template <class... Args> void _print(queue <Args...> v) {cerr << "[ "; while (!v
 template <class... Args> void _print(priority_queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
 
 //tc is o(n^2 in wc,ac) and o(n) in bc and sc is o(1) inplace
-
+//it is stable
 int main(){
     vector<ll>given={9,52,13,20,46,24,20,52,9};
     ll n=given.size();
