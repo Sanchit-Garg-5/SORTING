@@ -47,7 +47,7 @@ template <class... Args> void _print(queue <Args...> v) {cerr << "[ "; while (!v
 template <class... Args> void _print(priority_queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
 
 //tc is o(nlogn in ac,bc) and o(n^2) in wc(if pivot picked is always largest, smallest) 
-// and sc is o(n) 
+// and sc is o(n) // is unstable
 ll placer(vector<ll>&given, ll left, ll right, ll num){ 
     int n=given.size();
     int i=left, j=left;
