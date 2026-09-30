@@ -46,7 +46,7 @@ template <class... Args> void _print(stack <Args...> v) {cerr << "[ "; while (!v
 template <class... Args> void _print(queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.front()); cerr << " "; v.pop();} cerr << "]";}
 template <class... Args> void _print(priority_queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
 
-//tc is o(n^2 in wc,ac) and o(n) in bc and sc is o(n) inplace
+//tc is o(n^2 in wc,ac) and o(n) in bc and sc is o(n) inplace , it is stable
 void compare(vector<ll>&given, int j,ll num){
     if(j<0){given[0]=num; return;}
     //this base case ensures that if num was less than all unsorted elements,
