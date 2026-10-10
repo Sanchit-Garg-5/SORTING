@@ -52,9 +52,9 @@ void merge(vector<ll>&given,ll left, ll leftend, ll right, ll rightend){
     ll i=left,j=right;
     int n=given.size();
     vector<ll>me;
-    while(i<n && j<n && i<=leftend && j<=rightend){
-        if(given[i]>given[j]){me.push_back(given[j]); j++; }
-        else{me.push_back(given[i]); i++; inversion_count+=(leftend-i+1);}
+    while(i<=leftend && j<=rightend){
+        if(given[i]>given[j]){me.push_back(given[j]); j++; inversion_count+=(leftend-i+1); }
+        else{me.push_back(given[i]); i++; }
     }
     while(i<=leftend){
         me.push_back(given[i]); i++;
@@ -67,16 +67,16 @@ void merge(vector<ll>&given,ll left, ll leftend, ll right, ll rightend){
     return;
 }
 void breakarray(vector<ll>&given, ll left,ll right){
-    if(left==right){
+    if(left>=right){
         return;
     }
     ll mid=(left+right)/2;
     breakarray(given,left,mid); breakarray(given,mid+1,right);
     merge(given,left,mid,mid+1,right);
 }
-int main(){
-    vector<ll>given={8,2,1,3,46,7,-1,54,9};
-    ll n=given.size();
+int main(){ll n; cin>>n;
+    vector<ll>given;
+    for(int i=0;i<n;i++){ll x; cin>>x; given.push_back(x);}
     breakarray(given,0,n-1);
     debug(given); debug(inversion_count);
 }
