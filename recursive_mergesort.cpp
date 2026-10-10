@@ -47,13 +47,14 @@ template <class... Args> void _print(queue <Args...> v) {cerr << "[ "; while (!v
 template <class... Args> void _print(priority_queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
 
 //tc is o(nlogn in wc,ac,bc)  and sc is o(n) 
+ll inversion_count=0;
 void merge(vector<ll>&given,ll left, ll leftend, ll right, ll rightend){
     ll i=left,j=right;
     int n=given.size();
     vector<ll>me;
     while(i<n && j<n && i<=leftend && j<=rightend){
         if(given[i]>given[j]){me.push_back(given[j]); j++; }
-        else{me.push_back(given[i]); i++;}
+        else{me.push_back(given[i]); i++; inversion_count+=(leftend-i+1);}
     }
     while(i<=leftend){
         me.push_back(given[i]); i++;
@@ -77,5 +78,5 @@ int main(){
     vector<ll>given={8,2,1,3,46,7,-1,54,9};
     ll n=given.size();
     breakarray(given,0,n-1);
-    debug(given);
+    debug(given); debug(inversion_count);
 }
