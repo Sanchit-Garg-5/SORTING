@@ -46,7 +46,7 @@ template <class... Args> void _print(stack <Args...> v) {cerr << "[ "; while (!v
 template <class... Args> void _print(queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.front()); cerr << " "; v.pop();} cerr << "]";}
 template <class... Args> void _print(priority_queue <Args...> v) {cerr << "[ "; while (!v.empty()) {_print(v.top()); cerr << " "; v.pop();} cerr << "]";}
 
-//tc is o(d*(n+k)) where n is total elements and k is the base for ex 10
+//tc is o(d*(n+k)) where n is total elements and k is the base-1 for ex 10-1=9
 //  d is the number of digits in max element
 // and sc is o(k+n) for frequency array
 
